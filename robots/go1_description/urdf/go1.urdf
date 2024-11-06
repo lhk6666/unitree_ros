@@ -60,6 +60,12 @@
             </plot>
         </plugin>
     </gazebo> -->
+  <!-- Attacher function. -->
+  <gazebo>
+    <plugin name="link_attacher" filename="libgazebo_ros_link_attacher.so">
+      <robotNamespace>/go1_gazebo</robotNamespace>
+    </plugin>
+  </gazebo>
   <gazebo>
     <plugin filename="libgazebo_ros_force.so" name="gazebo_ros_force">
       <bodyName>trunk</bodyName>

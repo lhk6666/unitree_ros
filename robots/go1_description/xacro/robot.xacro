@@ -67,6 +67,52 @@
         </inertial>
     </link>
 
+    <joint name="front_joint" type="fixed">
+        <parent link="trunk"/>
+        <child link="front_link"/>
+        <origin xyz="0 0 0.1" rpy="0 0 0"/> 
+    </joint>
+    
+    <link name="front_link">
+        <visual>
+            <origin xyz="-0.1 0 -0.03" rpy="0 0 0"/> 
+            <geometry>
+                <box size="0.1 0.2 0.02"/> 
+            </geometry>
+            <material name="custom_red">
+                <color rgba="0.851 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+    </link>
+    <gazebo reference="front_link">
+        <material>
+            Gazebo/Red
+        </material>
+    </gazebo>
+
+    <joint name="rear_joint" type="fixed">
+        <parent link="trunk"/>
+        <child link="rear_link"/>
+        <origin xyz="0 0 0.1" rpy="0 0 0"/> 
+    </joint>
+    
+    <link name="rear_link">
+        <visual>
+            <origin xyz="0.18 0 -0.03" rpy="0 0 0"/> 
+            <geometry>
+                <box size="0.2 0.05 0.02"/> 
+            </geometry>
+            <material name="custom_red">
+                <color rgba="0.851 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+    </link>
+    <gazebo reference="rear_link">
+        <material>
+            Gazebo/Black
+        </material>
+    </gazebo>
+
     <joint name="imu_joint" type="fixed">
         <parent link="trunk"/>
         <child link="imu_link"/>

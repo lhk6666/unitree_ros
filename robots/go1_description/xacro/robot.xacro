@@ -77,7 +77,7 @@
         <visual>
             <origin xyz="-0.1 0 -0.03" rpy="0 0 0"/> 
             <geometry>
-                <box size="0.1 0.2 0.02"/> 
+                <box size="0.2 0.2 0.02"/> 
             </geometry>
             <material name="custom_red">
                 <color rgba="0.851 0.0 0.0 1.0"/>
@@ -98,9 +98,9 @@
     
     <link name="rear_link">
         <visual>
-            <origin xyz="0.18 0 -0.03" rpy="0 0 0"/> 
+            <origin xyz="0.2 0 -0.03" rpy="0 0 0"/> 
             <geometry>
-                <box size="0.2 0.05 0.02"/> 
+                <box size="0.2 0.2 0.02"/> 
             </geometry>
             <material name="custom_red">
                 <color rgba="0.851 0.0 0.0 1.0"/>

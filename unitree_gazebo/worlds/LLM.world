@@ -28,6 +28,7 @@
                 <speed>12</speed>
             </clouds>
         </sky>
+        <shadows>false</shadows>
         </scene>
         <!-- A global light source -->
         <include>
@@ -38,39 +39,29 @@
             <uri>model://ground_plane</uri>
         </include>
         <!-- environment blocks, obstacles or stairs -->
-        <model name="brown">
-        <static>False</static>
-            <link name="brown_link">
-                <pose>0.5 -0.5 0.5 0 0 0</pose>
-                <collision name="static_box_collision">
-                    <geometry>
-                        <box>
-                            <size>0.3 0.3 0.3</size>
-                        </box>
-                    </geometry>
-                </collision>
-                <visual name="static_box_visual">
-                    <geometry>
-                        <box>
-                            <size>0.3 0.3 0.3</size>
-                        </box>
-                    </geometry>
-                    <material>
-                        <ambient>0.2 0.2 0.2 1.0</ambient>
-                        <diffuse>.421 0.225 0.0 1.0</diffuse>
-                        <script>
-		            <uri>model://textures</uri>
-		            <name>L</name>
-		        </script>
-                    </material>
-                </visual>
-            </link>
-        </model>
+       <include>
+           <uri>model://L</uri>
+	   <name>Letter/L</name>
+	   <pose>0 0 0.5 0 0 0</pose>
+       </include>
+       
+       <include>
+           <uri>model://I</uri>
+	   <name>Letter/I</name>
+	   <pose>-0.5 1 0.5 0 0 0</pose>
+       </include>
+       
+       <include>
+           <uri>model://U</uri>
+	   <name>Letter/U</name>
+	   <pose>0.5 1 0.5 0 0 0</pose>
+       </include>
+       
        <model name="camera">
         <static>True</static>
        <link name="camera_link">
         <sensor name="camera" type="camera">
-          <pose>0 0 2 0 1.5707 0</pose> 
+          <pose>0 0 2.5 0 1.5707 0</pose> 
           <camera>
             <horizontal_fov>1.5</horizontal_fov> 
             <image>
@@ -95,37 +86,7 @@
 	</plugin>
         </sensor>
       </link>
-        </model>
-    <model name="gray">
-    <static>False</static> 
-    <link name="gray_link">
-      <pose>0.5 0.25 0.5 0 0 0.78</pose>
-      <visual name="A_block_visual">
-        <geometry>
-          <box>
-            <size>0.3 0.3 0.3</size> 
-          </box>
-        </geometry>
-        <material>
-          <ambient>0.5 0.5 0.5 1</ambient> 
-          <diffuse>0.7 0.7 0.7 1</diffuse> 
-        </material>
-
-        <text>
-          <font_name>Arial</font_name>
-          <text>A</text> 
-          <scale>5</scale> 
-          <color>1 0 0 1</color> 
-        </text>
-      </visual>
-      <collision name="A_block_collision">
-        <geometry>
-          <box>
-            <size>0.3 0.3 0.3</size>
-          </box>
-        </geometry>
-      </collision>
-    </link>
-  </model>
+    </model>
+  
     </world>
 </sdf>
